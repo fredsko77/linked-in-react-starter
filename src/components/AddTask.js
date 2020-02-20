@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import uniqueid from 'uniqueid';
+import uniqid from 'uniqid';
 import { addTask } from '../actions';
 
 
@@ -10,7 +10,7 @@ class AddTask extends Component
     handleSubmit = (e) => {
         e.preventDefault()
         let item = {
-            id: uniqueid(),
+            id: uniqid(),
             name: this.newTask.value,
             completed: false 
         }
@@ -36,7 +36,7 @@ class AddTask extends Component
     }
 }
 
-mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         addTask: (item) => {
             dispatch(addTask(item))
